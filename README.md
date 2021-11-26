@@ -331,7 +331,7 @@ app.set('view engine', 'ejs')
     <div>
         <ul>
             <% for(let movie of movies) { %>
-                <li><%= movie.title %></li>
+                <img src="<%= movie.image %>">
             <% } %>
         </ul>
     </div>
@@ -342,7 +342,7 @@ app.set('view engine', 'ejs')
 8. Run `nodemon index.js`, if you don't have `nodemon`, run `npm i nodemon`. 
 9. You should now be able to see a movie list rendered when you visit `localhost:3000/movies`. 
 
-![Screen Shot 2021-11-26 at 8 46 39 AM](https://user-images.githubusercontent.com/1819208/143590416-95075ab2-15a5-4f06-9516-b1b19f3ebef4.png)
+![Screen Shot 2021-11-26 at 9 03 12 AM](https://user-images.githubusercontent.com/1819208/143592754-e8333229-21b9-4eb5-a12f-be37d3741e65.png)
 
 Congratulation, you are now able to view movies in your Browser from the Mongo database. 🎉
 
