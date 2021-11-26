@@ -1,6 +1,6 @@
 # Movie Curator
 
-## Objectives
+## 1. Objectives
 
 Movie Curator is a Web Application that allows you to Create, Read, Update and Delete movies from a Database.
 
@@ -16,8 +16,14 @@ Movie Curator is a Web Application that allows you to Create, Read, Update and D
 | Update | `/movies/:id` | PATCH | updates a specific movie on the server |  |
 | Destroy | `/movies/:id` | DELETE | deletes a specific movie on the server |  |
 
-### Technologies used in creating the "Movie Curator" Web Applicatioon
+### Technologies that will be used in creating the "Movie Curator" Web Applicatioon
 
 * HTML, CSS, JavaScript, EJS, Bootstrap.
 * Node, Express.
 * Mongoose, MongoDB.
+
+***
+
+## 2. Project Setup (Node, Express, MongoDB, Moongoose)
+
+1. Close this repo and use the `starter` branch. 
