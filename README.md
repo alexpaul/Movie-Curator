@@ -345,6 +345,5 @@ app.set('view engine', 'ejs')
 ![Screen Shot 2021-11-26 at 8 46 39 AM](https://user-images.githubusercontent.com/1819208/143590416-95075ab2-15a5-4f06-9516-b1b19f3ebef4.png)
 
 Congratulation, you are now able to view movies in your Browser from the Mongo database. 🎉
-![Screen Shot 2021-11-26 at 8 46 39 AM](https://user-images.githubusercontent.com/1819208/143590416-95075ab2-15a5-4f06-9516-b1b19f3ebef4.png)
 
 
