@@ -26,7 +26,7 @@ Movie Curator is a Web Application that allows you to Create, Read, Update and D
 
 ## 2. Project Setup - Express
 
-1. Close this repo and use the `starter-project` branch. 
+1. Clone this repo and use the `starter-project` branch. 
 2. Navigate inside the Project folder in Terminal and run `npm init` to create the `package.json` file. 
 3. Install Express `npm i express`. 
 4. Install Mongoose `npm i mongoose`. 
