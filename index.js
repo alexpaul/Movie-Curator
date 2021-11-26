@@ -28,6 +28,8 @@ app.listen(PORT, () => {
 
 app.set('view engine', 'ejs')
 
+app.use(express.static(__dirname + '/public'))
+
 // GET route `/` for the home directory 
 app.get('/', (req, res) => {
     res.send(`<h1>Welcome to Movie Curator</h1>`)

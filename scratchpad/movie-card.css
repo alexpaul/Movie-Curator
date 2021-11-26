@@ -1,0 +1,15 @@
+#movie-card {
+    display: flex;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+img {
+    width: 155px;
+    height: 226px;
+    object-fit: cover;
+}
+
+#movie-info{
+    margin-left: 24px;
+}

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
     <h1>Curated Movies</h1>
@@ -12,9 +13,10 @@
     <div>
         <ul>
             <% for(let movie of movies) { %>
-                <img src="<%= movie.image %>">
+                <%- include('../partials/movie-card', { movie }) %>
             <% } %>
         </ul>
     </div>
 </body>
 </html>
+
