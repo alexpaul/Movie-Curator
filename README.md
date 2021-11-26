@@ -8,7 +8,7 @@ Movie Curator is a Web Application that allows you to Create, Read, Update and D
 
 | Name | Path | Verb | Purpose | Completed |
 |:----:|:-----:|:-----:|:----:|:----:|
-| Index | `/movies` | GET | display all movies |  |
+| Index | `/movies` | GET | display all movies | ✅ |
 | New | `/movies/new` | GET | Form to create a new movie |  |
 | Create | `/movies` | POST | creates a new movie on the server |  |
 | Show | `/movies/:id` | GET | details for a specific movie |  |
