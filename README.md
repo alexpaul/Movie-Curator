@@ -52,4 +52,4 @@ app.get('/', (req, res) => {
     res.send(`<h1>Welcome to Movie Curator</h1>`)
 })
 ```
-8. Save the file, run the node server `node index.js` and navigate to the home directory at `localhost:3000` on your Browser. Observe the rendered HTML "Welsome to Movie Curator".
+8. Save the file, run the node server `node index.js` and navigate to the home directory at `localhost:3000` on your Browser. Observe the rendered HTML "Welcome to Movie Curator".
