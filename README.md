@@ -296,3 +296,55 @@ Movie.insertMany(movies)
 5. Follow the steps in the `mock-data.js` file. 
 6. You should now have `movies` data, verify by running `db.movies.find()` in a `mongo` shell.
 
+***
+
+## 7. Show all Movies route `GET /movies`
+
+1. Create a folder called `views`. 
+2. Create a folder called `movies` inside of the `views` folder. 
+3. Create a file called `index.ejs` and save it inside the `movies` folder. 
+4. Create a `GET /movies` route in the `index.js` file.
+```javascript 
+// GET route `/movies`
+app.get('/movies', async (req, res) => {
+    const movies = await Movie.find({})
+    res.render('movies/index', { movies })
+})
+```
+5. We will be using EJS for adding JavaScript templating code to our app, add the following to `index.js`
+```javascript
+app.set('view engine', 'ejs')
+```
+6. Add the following code to render a movie list to `index.ejs`.
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    <h1>Curated Movies</h1>
+
+    <div>
+        <ul>
+            <% for(let movie of movies) { %>
+                <li><%= movie.title %></li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>
+```
+7. From now on we will use `nodemon` to run the node server, as it automatially watches and re-runs the node server based on file changes. 
+8. Run `nodemon index.js`, if you don't have `nodemon`, run `npm i nodemon`. 
+9. You should now be able to see a movie list rendered when you visit `localhost:3000/movies`. 
+
+![Screen Shot 2021-11-26 at 8 46 39 AM](https://user-images.githubusercontent.com/1819208/143590416-95075ab2-15a5-4f06-9516-b1b19f3ebef4.png)
+
+Congratulation, you are now able to view movies in your Browser from the Mongo database. 🎉
+![Screen Shot 2021-11-26 at 8 46 39 AM](https://user-images.githubusercontent.com/1819208/143590416-95075ab2-15a5-4f06-9516-b1b19f3ebef4.png)
+
+
