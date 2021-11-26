@@ -182,6 +182,8 @@ Movie was successfully saved to the database.
 
 Awesome, we now have Express, Mongoose and MongoDB all connected in our app. 🎉
 
+***
+
 ## 6. Refactor our application to create mock Movie data in the database 
 
 1. Stop the server if it is currently running `Ctrl+C`. 
