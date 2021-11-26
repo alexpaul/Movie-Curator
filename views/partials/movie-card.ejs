@@ -5,7 +5,11 @@
     <div id="movie-info">
         <h2>Title: <%= movie.title %></h2>
         <h2>Year: <%= movie.year %></h2>
-        <h2>Genre: Animation | Comedy | Adventure</h2>
+        <% let str = '' %>
+        <% for(let genre of movie.genre) { %>
+            <% str += genre + ' | ' %>
+        <% } %>
+        <h2><%= `Genre: ${str}` %></h2>
         <h2><a href="<%= movie.url %>">More Info</a></h2>
     </div>
 </div>
