@@ -30,20 +30,3 @@ app.listen(PORT, () => {
 app.get('/', (req, res) => {
     res.send(`<h1>Welcome to Movie Curator</h1>`)
 })
-
-const movie = new Movie({ title: '8-Bit Christmas',
-                          year: 2021,
-                          genre: ['Comedy', 'Family', 'Fantasy'],
-                          image: 'https://www.imdb.com/title/tt11540284/mediaviewer/rm3072715265/?ref_=tt_ov_i',
-                          url: 'https://www.imdb.com/title/tt11540284/?ref_=nv_sr_srsg_0' })
-
-
-movie.save()
-    .then(res => {
-        console.log('Movie was successfully saved to the database.')
-        console.log(res)
-    })
-    .catch(error => {
-        console.log('An error was encountered while saving the movie.')
-        console.log(error)
-    })
