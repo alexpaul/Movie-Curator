@@ -24,6 +24,32 @@ Movie Curator is a Web Application that allows you to Create, Read, Update and D
 
 ***
 
-## 2. Project Setup (Node, Express, MongoDB, Moongoose)
+## 2. Project Setup - Express
 
 1. Close this repo and use the `starter-project` branch. 
+2. Navigate inside the Project folder in Terminal and run `npm init` to create the `package.json` file. 
+3. Install Express `npm i express`. 
+4. Install Mongoose `npm i mongoose`. 
+5. Install EJS `npm i ejs`. 
+6. Create a file called `index.js` in the root directory `touch index.js`. 
+7. Edit `index.js` and add the following setup code for Express. 
+```javascript
+// require the Express package
+const express = require('express')
+
+// get an instance of express()
+const app = express()
+
+const PORT = '3000'
+
+// Express app is now open for requests on the following PORT
+app.listen(PORT, () => {
+    console.log(`App is Listening on PORT ${PORT}`)
+})
+
+// GET route `/` for the home directory 
+app.get('/', (req, res) => {
+    res.send(`<h1>Welcome to Movie Curator</h1>`)
+})
+```
+8. Save the file, run the node server `node index.js` and navigate to the home directory at `localhost:3000` on your Browser. Observe the rendered HTML "Welsome to Movie Curator".
