@@ -365,7 +365,11 @@ app.use(express.static(__dirname + '/public'))
     <div id="movie-info">
         <h2>Title: <%= movie.title %></h2>
         <h2>Year: <%= movie.year %></h2>
-        <h2>Genre: Animation | Comedy | Adventure</h2>
+        <% let str = '' %>
+        <% for(let genre of movie.genre) { %>
+            <% str += genre + ' | ' %>
+        <% } %>
+        <h2><%= `Genre: ${str}` %></h2>
         <h2><a href="<%= movie.url %>">More Info</a></h2>
     </div>
 </div>
@@ -398,6 +402,6 @@ app.use(express.static(__dirname + '/public'))
 ```
 8. Running the server and navigating to `localhost:3000/movies` will render the view seen below.
 
-![Screen Shot 2021-11-26 at 10 14 03 AM](https://user-images.githubusercontent.com/1819208/143601353-bfc3281c-5c66-4f90-993c-26d071b0313c.png)
+![Screen Shot 2021-11-26 at 10 31 30 AM](https://user-images.githubusercontent.com/1819208/143603356-7f9973d1-2054-4155-a583-d5cdf5106a04.png)
 
 
