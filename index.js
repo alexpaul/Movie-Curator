@@ -26,7 +26,15 @@ app.listen(PORT, () => {
     console.log(`App is Listening on PORT ${PORT}`)
 })
 
+app.set('view engine', 'ejs')
+
 // GET route `/` for the home directory 
 app.get('/', (req, res) => {
     res.send(`<h1>Welcome to Movie Curator</h1>`)
+})
+
+// GET route `/movies`
+app.get('/movies', async (req, res) => {
+    const movies = await Movie.find({})
+    res.render('movies/index', { movies })
 })

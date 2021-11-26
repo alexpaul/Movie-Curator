@@ -30,28 +30,28 @@ const movies = [
         title: '8-Bit Christmas',
         year: 2021,
         genre: ['Comedy', 'Family', 'Fantasy'],
-        image: 'https://www.imdb.com/title/tt11540284/mediaviewer/rm3072715265/?ref_=tt_ov_i',
+        image: 'https://resizing.flixster.com/LzA0xwxtXvQ2G_CdpwtaDTzuC3w=/206x305/v2/https://resizing.flixster.com/oVxQtI5DE4CcNiKEm3x9l8OyARc=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzE3YmMxMjJmLTc1ZjMtNDc5Mi1hYjE2LWY2N2IxYjJmZmI1ZC5qcGc=',
         url: 'https://www.imdb.com/title/tt11540284/?ref_=nv_sr_srsg_0' 
     },
     { 
         title: 'Kung Fu Panda',
         year: 2008,
         genre: ['Action', 'Adventure', 'Animation'],
-        image: 'https://www.imdb.com/title/tt0441773/mediaviewer/rm3096332288/?ref_=tt_ov_i',
+        image: 'https://resizing.flixster.com/1GJzyEVS8LieIFF6YJHcxLcrfOM=/206x305/v2/https://flxt.tmsimg.com/NowShowing/64718/64718_aa.jpg',
         url: 'https://www.imdb.com/title/tt0441773/?ref_=fn_al_tt_1' 
     },
     { 
         title: 'James and the Giant Peach',
         year: 1996,
         genre: ['Animation', 'Family', 'Adventure'],
-        image: 'https://www.imdb.com/title/tt0116683/mediaviewer/rm4238147840/?ref_=tt_ov_i',
+        image: 'https://resizing.flixster.com/jgDY8SqhiU26Bt_V8NVmSrPvgUw=/206x305/v2/https://flxt.tmsimg.com/assets/p17892_p_v8_ad.jpg',
         url: 'https://www.imdb.com/title/tt0116683/?ref_=fn_al_tt_1' 
     },
     { 
         title: 'Klaus',
         year: 2019,
         genre: ['Animation', 'Comedy', 'Adventure'],
-        image: 'https://www.imdb.com/title/tt4729430/mediaviewer/rm1843825409/?ref_=tt_ov_i',
+        image: 'https://resizing.flixster.com/eAEXkTkAtYAzAhT5WLhxRSZHkPc=/206x305/v2/https://resizing.flixster.com/rP7lnn4r40j3Q6YRH0ycZLmaBbU=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzL2ZkYmI5YmNhLTNhNDctNDA2Zi1hZTQwLWJiZTU2YWY5N2EwOC53ZWJw',
         url: 'https://www.imdb.com/title/tt4729430/?ref_=fn_al_tt_1' 
     }
 ]
