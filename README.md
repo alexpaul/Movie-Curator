@@ -22,6 +22,9 @@ Movie Curator is a Web Application that allows you to Create, Read, Update and D
 * Node, Express.
 * Mongoose, MongoDB.
 
+![Screen Shot 2021-11-26 at 3 49 16 PM](https://user-images.githubusercontent.com/1819208/143637028-b526295a-4161-43a0-893c-51c7c3553807.png)
+
+
 ***
 
 ## 2. Project Setup - Express
