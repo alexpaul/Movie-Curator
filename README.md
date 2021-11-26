@@ -171,7 +171,13 @@ Movie was successfully saved to the database.
 10. Run `show collections`, this will list all collections that belong to the `movieDB` database. `movies` should be listed. 
 11. Run `db.movies.find()` to list all movies. You should now have at least one movie entry. 
 ```
-{ "_id" : ObjectId("61a0d54f3f9f725e653c4b63"), "title" : "8-Bit Christmas", "year" : 2021, "genre" : [ "Comedy", "Family", "Fantasy" ], "image" : "https://www.imdb.com/title/tt11540284/mediaviewer/rm3072715265/?ref_=tt_ov_i", "url" : "https://www.imdb.com/title/tt11540284/?ref_=nv_sr_srsg_0", "__v" : 0 }
+{ "_id" : ObjectId("61a0d54f3f9f725e653c4b63"),
+  "title" : "8-Bit Christmas",
+  "year" : 2021,
+  "genre" : [ "Comedy", "Family", "Fantasy" ],
+  "image" : "https://www.imdb.com/title/tt11540284/mediaviewer/rm3072715265/?ref_=tt_ov_i",
+  "url" : "https://www.imdb.com/title/tt11540284/?ref_=nv_sr_srsg_0", "__v" : 0
+}
 ```
 
 Awesome, we now have Express, Mongoose and MongoDB all connected in our app. 🎉
