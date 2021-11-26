@@ -9,8 +9,8 @@ Movie Curator is a Web Application that allows you to Create, Read, Update and D
 | Name | Path | Verb | Purpose | Completed |
 |:----:|:-----:|:-----:|:----:|:----:|
 | Index | `/movies` | GET | display all movies | ✅ |
-| New | `/movies/new` | GET | Form to create a new movie |  |
-| Create | `/movies` | POST | creates a new movie on the server |  |
+| New | `/movies/new` | GET | Form to create a new movie | ✅ |
+| Create | `/movies` | POST | creates a new movie on the server | ✅ |
 | Show | `/movies/:id` | GET | details for a specific movie |  |
 | Edit | `/movies/:id/edit` | GET | Form to edit specific movie |  |
 | Update | `/movies/:id` | PATCH | updates a specific movie on the server |  |
@@ -346,6 +346,8 @@ app.set('view engine', 'ejs')
 
 Congratulation, you are now able to view movies in your Browser from the Mongo database. 🎉
 
+***
+
 ## 8. Add some CSS styling to the `GET /movies` route
 
 1. Create a `public` folder in the root directory. 
@@ -403,5 +405,124 @@ app.use(express.static(__dirname + '/public'))
 8. Running the server and navigating to `localhost:3000/movies` will render the view seen below.
 
 ![Screen Shot 2021-11-26 at 10 31 30 AM](https://user-images.githubusercontent.com/1819208/143603356-7f9973d1-2054-4155-a583-d5cdf5106a04.png)
+
+***
+
+## 9. Create a Movie `GET /movies/new` and `POST /movies` routes
+
+1. Add a new route `GET /movies/new` to `index.js`.
+```javascript
+// GET route `/movies/new`
+app.get('/movies/new', (req, res) => {
+    res.render('movies/new')
+})
+```
+2. Create a file called `new.js` and save it to the `movies` folder. 
+3. Edit the `new.js` file and add the following code to create a Form and make a POST request to create a movie. 
+```javascript 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter a New Movie</h1>
+
+    <form action="/movies" method="POST">
+        <div>
+            <label for="title">Enter Title:</label>
+            <input type="text" id="title" name="title">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="year">Enter Year:</label>
+            <input type="text" id="year" name="year">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="image">Enter Image URL:</label>
+            <input type="text" id="image" name="image">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="url">Enter desired movie link e.g (Rotten Tomatoes, IMDB):</label>
+            <input type="text" id="more-info" name="url">
+        </div>
+
+        <br>
+
+        <div>
+            <fieldset id="genre">
+                <legend>Please select the appropriate Genre</legend>
+                <label for="Animation">Animation</label>
+                <input type="checkbox" value="Animation" name="genre" id="Animation">
+                <label for="Comedy">Comedy</label>
+                <input type="checkbox" value="Comedy" name="genre" id="Comedy">
+                <label for="Family">Family</label>
+                <input type="checkbox" value="Family" name="genre" id="Family">
+                <label for="Fantasy">Fantasy</label>
+                <input type="checkbox" value="Fantasy" name="genre" id="Fantasy">
+                <label for="Action">Action</label>
+                <input type="checkbox" value="Action" name="genre" id="Action">
+                <label for="Adventure">Adventure</label>
+                <input type="checkbox" value="Adventure" name="genre" id="Adventure">
+                <label for="Drama">Drama</label>
+                <input type="checkbox" value="Drama" name="genre" id="Drama">
+            </fieldset>
+        </div>
+
+        <br>
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>
+```
+
+![Screen Shot 2021-11-26 at 2 46 44 PM](https://user-images.githubusercontent.com/1819208/143625671-f246f248-981f-454b-8b84-66d88bd3eade.png)
+
+4. In order to parse POST data from the created form we have to add the following middleware to `index.js`: 
+```javascript
+// To extract the Form POST we have to use express.urlencoded() middleware
+app.use(express.urlencoded({ extended: true }))
+```
+5. Add the POST route to create a new movie and the appropriate logic: 
+```javascript
+// POST route `/movies`
+app.post('/movies', (req, res) => {
+    // destructure the following properties from the Request Body
+    const { title, year, genre, image, url } = req.body 
+
+    const product = new Movie({
+        title: title,
+        year: year,
+        genre: genre,
+        image: image, 
+        url: url
+    })
+
+    // save the newly created `movie` instance to the database
+    product.save()
+        .then(response => {
+            console.log('Movie was created.')
+            console.log(response)
+            res.redirect('/movies')
+        })
+        .catch(error => {
+            console.log('Encountered an error while creating the movie.')
+            console.log(error)
+        })
+})
+```
+6. Navigate to `localhost:3000/movies/new` to start curating new movies to the database. 🎉
 
 
