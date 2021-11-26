@@ -348,7 +348,56 @@ Congratulation, you are now able to view movies in your Browser from the Mongo d
 
 ## 8. Add some CSS styling to the `GET /movies` route
 
-![Screen Shot 2021-11-26 at 10 14 03 AM](https://user-images.githubusercontent.com/1819208/143601353-bfc3281c-5c66-4f90-993c-26d071b0313c.png)
+1. Create a `public` folder in the root directory. 
+2. Create a file called `app.css` and save it inside the `public` folder. 
+3. Add the following middleware code to `index.js` so Express searches for our CSS files inside the `public` folder. 
+```javascript 
+app.use(express.static(__dirname + '/public'))
+```
+4. Create a folder called `partials` inside of the `views` folder.
+5. Create a file called `movie-card.ejs` and save it inside the `partials` folder. 
+6. Edit the `movie-card.ejs` file as follows:
+```javascript
+<div id="movie-card">
+    <div id="image-container">
+        <img src="<%= movie.image %>" alt="">
+    </div>
+    <div id="movie-info">
+        <h2>Title: <%= movie.title %></h2>
+        <h2>Year: <%= movie.year %></h2>
+        <h2>Genre: Animation | Comedy | Adventure</h2>
+        <h2><a href="<%= movie.url %>">More Info</a></h2>
+    </div>
+</div>
+```
+7. Modify the `index.ejs` file as follows: 
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <!-- include the app.css file located in the `public` folder -->
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <h1>Curated Movies</h1>
 
+    <div>
+        <ul>
+            <% for(let movie of movies) { %>
+                <%# this partial contains the html, css to render a movie card %>
+                <%- include('../partials/movie-card', { movie }) %>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>
+```
+8. Running the server and navigating to `localhost:3000/movies` will render the view seen below.
+
+![Screen Shot 2021-11-26 at 10 14 03 AM](https://user-images.githubusercontent.com/1819208/143601353-bfc3281c-5c66-4f90-993c-26d071b0313c.png)
 
 
