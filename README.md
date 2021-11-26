@@ -346,4 +346,9 @@ app.set('view engine', 'ejs')
 
 Congratulation, you are now able to view movies in your Browser from the Mongo database. 🎉
 
+## 8. Add some CSS styling to the `GET /movies` route
+
+![Screen Shot 2021-11-26 at 10 14 03 AM](https://user-images.githubusercontent.com/1819208/143601353-bfc3281c-5c66-4f90-993c-26d071b0313c.png)
+
+
 
