@@ -53,3 +53,13 @@ app.get('/', (req, res) => {
 })
 ```
 8. Save the file, run the node server `node index.js` and navigate to the home directory at `localhost:3000` on your Browser. Observe the rendered HTML "Welcome to Movie Curator".
+
+***
+
+## 3. MongoDB setup 
+
+1. Start the MongoDB service in Terminal `brew services start mongodb-community@5.0`. 
+2. Run the MongoDB shell `mongo`. 
+3. Ensure `mongo` is running by typing `show dbs` in the shell, this will list all existing databases. 
+
+For more on MongoDB installation start [here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/).
