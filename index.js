@@ -1,4 +1,5 @@
 // require the Express package
+const { render } = require('ejs')
 const express = require('express')
 
 // get an instance of express()
@@ -30,9 +31,12 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(__dirname + '/public'))
 
+// To extract the Form POST we have to use express.urlencoded() middleware
+app.use(express.urlencoded({ extended: true }))
+
 // GET route `/` for the home directory 
 app.get('/', (req, res) => {
-    res.send(`<h1>Welcome to Movie Curator</h1>`)
+    res.render('movies/home')
 })
 
 // GET route `/movies`
@@ -40,3 +44,36 @@ app.get('/movies', async (req, res) => {
     const movies = await Movie.find({})
     res.render('movies/index', { movies })
 })
+
+// GET route `/movies/new`
+app.get('/movies/new', (req, res) => {
+    res.render('movies/new')
+})
+
+// POST route `/movies`
+app.post('/movies', (req, res) => {
+    // destructure the following properties from the Request Body
+    const { title, year, genre, image, url } = req.body 
+
+    const product = new Movie({
+        title: title,
+        year: year,
+        genre: genre,
+        image: image, 
+        url: url
+    })
+
+    // save the newly created `movie` instance to the database
+    product.save()
+        .then(response => {
+            console.log('Movie was created.')
+            console.log(response)
+            res.redirect('/movies')
+        })
+        .catch(error => {
+            console.log('Encountered an error while creating the movie.')
+            console.log(error)
+        })
+})
+
+// db.movies.deleteOne({ title: 'White Reindeer'} )

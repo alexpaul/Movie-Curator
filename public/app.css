@@ -5,7 +5,7 @@
     margin-bottom: 8px;
 }
 
-img {
+#image-container img {
     width: 155px;
     height: 226px;
     object-fit: cover;
@@ -13,4 +13,10 @@ img {
 
 #movie-info{
     margin-left: 24px;
+}
+
+#home-container img {
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
 }
