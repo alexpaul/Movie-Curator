@@ -26,7 +26,7 @@ Movie Curator is a Web Application that allows you to Create, Read, Update and D
 
 ## 2. Project Setup - Express
 
-1. Clone this repo and use the `starter-project` branch. 
+1. Clone this repo and use the `starter-project` branch then follow the steps below from step 3. 
 2. Or you can use `main` and run `node mock-data` then run the server `node index.js` to preview the mock movies data at `localhost:3000/movies`, then you can create movies to your local database at `localhost:3000/movies/new`. 
 3. Navigate inside the Project folder in Terminal and run `npm init` to create the `package.json` file. 
 4. Install Express `npm i express`. 
