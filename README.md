@@ -529,4 +529,6 @@ app.post('/movies', (req, res) => {
 ```
 6. Navigate to `localhost:3000/movies/new` to start curating new movies to the database. 🎉
 
+## Resources 
 
+* [StackOverflow: MongoDB Startup Errors](https://stackoverflow.com/questions/41615574/mongodb-server-has-startup-warnings-access-control-is-not-enabled-for-the-dat)
