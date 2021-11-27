@@ -42,9 +42,9 @@ app.get('/', (req, res) => {
 // GET route `/movies`
 app.get('/movies', async (req, res) => {
     const movies = await Movie.find({})
-    // res.render('movies/index', { movies })
+    res.render('movies/index', { movies })
 
-    console.log(res.json(movies))
+    // res.json(movies)
 })
 
 // GET route `/movies/new`
