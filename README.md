@@ -537,6 +537,7 @@ app.post('/movies', (req, res) => {
 * [Express](http://expressjs.com/en/guide/routing.html)
 * [Mongoose](https://mongoosejs.com/)
 * [EJS](https://ejs.co/)
+* [MongoDB Compass - GUI for MongoDB](https://www.mongodb.com/products/compass)
 
 ## Troubleshooting 
 
