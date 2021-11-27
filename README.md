@@ -585,6 +585,9 @@ app.post('/movies', (req, res) => {
 ```
 4. Run the server and observe the now included Nav Bar.
 
+<img width="1587" alt="Screen Shot 2021-11-27 at 5 58 10 PM" src="https://user-images.githubusercontent.com/1819208/143722714-0cdd402d-84b4-4be2-98ee-8e196b510cb7.png">
+
+
 ***
 
 ## Resources 
