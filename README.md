@@ -529,4 +529,12 @@ app.post('/movies', (req, res) => {
 ```
 6. Navigate to `localhost:3000/movies/new` to start curating new movies to the database. 🎉
 
+## Resources 
 
+* [MDN - Web Development - HTML, CSS and JavaScript](https://developer.mozilla.org/en-US/docs/Learn)
+* [Node](https://nodejs.org/en/docs/guides/getting-started-guide/)
+* [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+* [Express](http://expressjs.com/en/guide/routing.html)
+* [Mongoose](https://mongoosejs.com/)
+* [EJS](https://ejs.co/)
+* [StackOverflow: MongoDB Startup Errors](https://stackoverflow.com/questions/41615574/mongodb-server-has-startup-warnings-access-control-is-not-enabled-for-the-dat)
