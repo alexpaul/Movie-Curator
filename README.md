@@ -529,6 +529,64 @@ app.post('/movies', (req, res) => {
 ```
 6. Navigate to `localhost:3000/movies/new` to start curating new movies to the database. 🎉
 
+***
+
+## 10. Use a Partial EJS file to include a Bootstrap Nav Bar 
+
+1. Create a file called `header.ejs` inside the `partials` folder. 
+2. Cut code inside the `home.ejs` file including the opening `body` tag and include this code in the `header.ejs` file. As seen in the code below Bootstrap CSS is included along with a [Bootstrap Nav Bar](https://getbootstrap.com/docs/5.1/components/navbar/).
+```javascript 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <%# Bootstrap CSS %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<%# Bootstap Nav Bar %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Movie Curator</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/movies">Curated Movies</a>
+          <a class="nav-link" href="/movies/new">Add a Movie</a>
+        </div>
+      </div>
+    </div>
+</nav>
+```
+3. Since we removed the header code from `home.ejs` we will now include an EJS partial replacement which has the code associated with `header.ejs`. Also included is the Bootstrap JavaScript needed to implement the collapsable Bootstrap Nav Bar:
+```javascript 
+<%- include('../partials/header', { title: 'Movie Creator' }) %>
+
+    <h1>Welcome to Movie Curator</h1>
+
+    <div id="home-container">
+        <a href="https://youtu.be/vAU7Hp63ceQ"><img src="https://i.ytimg.com/vi/vAU7Hp63ceQ/maxresdefault.jpg" alt=""></a>
+    </div>
+
+    <%# Option 1: Bootstrap Bundle with Popper %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+```
+4. Run the server and observe the now included Nav Bar.
+
+***
+
 ## Resources 
 
 * [MDN - Web Development - HTML, CSS and JavaScript](https://developer.mozilla.org/en-US/docs/Learn)
