@@ -537,9 +537,10 @@ app.post('/movies', (req, res) => {
 * [Express](http://expressjs.com/en/guide/routing.html)
 * [Mongoose](https://mongoosejs.com/)
 * [EJS](https://ejs.co/)
-* [StackOverflow: MongoDB Startup Errors](https://stackoverflow.com/questions/41615574/mongodb-server-has-startup-warnings-access-control-is-not-enabled-for-the-dat)
 
 ## Troubleshooting 
 
 * If you're having database connection issues try resolving from `localhost` to `127.0.0.1` instead.
 * Also run `db.getMongo()` will resolve the IP and Port number e.g `127.0.0.1:27017`.
+* [StackOverflow: MongoDB Startup Errors](https://stackoverflow.com/questions/41615574/mongodb-server-has-startup-warnings-access-control-is-not-enabled-for-the-dat)
+
