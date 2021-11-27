@@ -590,6 +590,132 @@ app.post('/movies', (req, res) => {
 
 ***
 
+## 11. Bootstrap modified Form for adding a Movie 
+
+```javascript 
+<%- include('../partials/header', { title: 'Add a New Movie' }) %>
+
+    <div class="container">
+
+        <h1 class="mb-3">Add a New Movie</h1>
+
+        <form action="/movies" method="POST">
+            <div>
+                <label for="title" class="form-label">Enter Title:</label>
+                <input class="form-control" type="text" id="title" name="title">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="form-label" for="year">Enter Year:</label>
+                <input class="form-control" type="text" id="year" name="year">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="form-label" for="image">Enter Image URL:</label>
+                <input class="form-control" type="text" id="image" name="image">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="form-label" for="url">Enter desired movie link e.g (Rotten Tomatoes, IMDB):</label>
+                <input class="form-control" type="text" id="url" name="url">
+            </div>
+
+            <br>
+
+            <div>
+                <fieldset id="genre" class="form-control">
+                    <legend>Please select the appropriate Genre</legend>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Animation" name="genre" id="Animation">
+                        <label class="form-check-label" for="Animation">Animation</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Comedy" name="genre" id="Comedy">
+                        <label class="form-check-label" for="Comedy">Comedy</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Family" name="genre" id="Family">
+                        <label class="form-check-label" for="Family">Family</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Fantasy" name="genre" id="Fantasy">
+                        <label class="form-check-label" for="Fantasy">Fantasy</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Action" name="genre" id="Action">
+                        <label class="form-check-label" for="Action">Action</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Adventure" name="genre" id="Adventure">
+                        <label class="form-check-label" for="Adventure">Adventure</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Drama" name="genre" id="Drama">
+                        <label class="form-check-label" for="Drama">Drama</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Romance" name="genre" id="Romance">
+                        <label class="form-check-label" for="Romance">Romance</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Thriller" name="genre" id="Thriller">
+                        <label class="form-check-label" for="Thriller">Thriller</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Horror" name="genre" id="Horror">
+                        <label class="form-check-label" for="Horror">Horror</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Mystery" name="genre" id="Mystery">
+                        <label class="form-check-label" for="Mystery">Mystery</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Sci-Fi" name="genre" id="Sci-Fi">
+                        <label class="form-check-label" for="Sci-Fi">Sci-Fi</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Crime" name="genre" id="Crime">
+                        <label class="form-check-label" for="Crime">Crime</label>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <br>
+
+            <div class="col text-center">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+
+<%- include('../partials/footer') %>
+```
+
+<img width="854" alt="Screen Shot 2021-11-27 at 6 46 46 PM" src="https://user-images.githubusercontent.com/1819208/143723674-ac853a60-cc3e-4bc6-b53f-c97f87c00f35.png">
+
+
+***
+
+
 ## Resources 
 
 * [MDN - Web Development - HTML, CSS and JavaScript](https://developer.mozilla.org/en-US/docs/Learn)
