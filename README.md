@@ -752,7 +752,7 @@ movieSchema.methods.formattedGenre = function() {
 ```
 3. Save and run the server. Observe the updated changes. 
 
-<img width="1789" alt="Screen Shot 2021-11-28 at 7 45 46 AM" src="https://user-images.githubusercontent.com/1819208/143768353-f96ca4a7-4c44-493f-b4c8-73154b57bdbc.png">
+<img width="1785" alt="Screen Shot 2021-11-28 at 8 05 32 AM" src="https://user-images.githubusercontent.com/1819208/143769027-d2b81d02-3f17-411c-81e7-4cfbaeb4b644.png">
 
 
 
