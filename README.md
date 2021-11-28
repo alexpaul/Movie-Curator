@@ -715,6 +715,46 @@ app.post('/movies', (req, res) => {
 
 ***
 
+## 12. Adding a Bootstrap Card Style and Instance Method on the `Movie` Schema
+
+1. Modify the `movie-card.ejs` as follows: 
+```javascript 
+<div class="container">
+    <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<%= movie.image %>" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title mb-5"><%= movie.title %></h5>
+              <p class="card-text"><%= movie.year %></p>
+              <p class="card-text"><%= movie.formattedGenre() %></p>
+              <a href="<%= movie.url %>" class="card-link">More Info</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+```
+2. Add an instance method in `movie.js` on the `movieSchemaa`: 
+```javascript
+// instance method to return a formatted `genre` String
+movieSchema.methods.formattedGenre = function() {
+    let str = ''
+
+    for(const [index, value] of this.genre.entries()) {
+        str += index !== (this.genre.length - 1) ? `${value} | ` : value
+    }
+
+    return str
+}
+```
+3. Save and run the server. Observe the updated changes. 
+
+<img width="1789" alt="Screen Shot 2021-11-28 at 7 45 46 AM" src="https://user-images.githubusercontent.com/1819208/143768353-f96ca4a7-4c44-493f-b4c8-73154b57bdbc.png">
+
+
 
 ## Resources 
 
