@@ -25,6 +25,17 @@ const movieSchema = new mongoose.Schema({
     }
 })
 
+// instance method to return a formatted `genre` String
+movieSchema.methods.formattedGenre = function() {
+    let str = ''
+
+    for(const [index, value] of this.genre.entries()) {
+        str += index !== (this.genre.length - 1) ? `${value} | ` : value
+    }
+
+    return str
+}
+
 // define the Movie Model
 const Movie = new mongoose.model('Movie', movieSchema)
 

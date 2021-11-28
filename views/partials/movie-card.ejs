@@ -1,15 +1,17 @@
-<div id="movie-card">
-    <div id="image-container">
-        <img src="<%= movie.image %>" alt="">
-    </div>
-    <div id="movie-info">
-        <h2>Title: <%= movie.title %></h2>
-        <h2>Year: <%= movie.year %></h2>
-        <% let str = '' %>
-        <% for(let genre of movie.genre) { %>
-            <% str += genre + ' | ' %>
-        <% } %>
-        <h2><%= `Genre: ${str}` %></h2>
-        <h2><a href="<%= movie.url %>">More Info</a></h2>
+<div class="container">
+    <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<%= movie.image %>" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title mb-5"><%= movie.title %></h5>
+              <p class="card-text"><%= movie.year %></p>
+              <p class="card-text"><%= movie.formattedGenre() %></p>
+              <a href="<%= movie.url %>" class="card-link">More Info</a>
+            </div>
+          </div>
+        </div>
     </div>
 </div>
