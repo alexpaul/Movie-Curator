@@ -10,6 +10,7 @@
               <p class="card-text"><%= movie.year %></p>
               <p class="card-text"><%= movie.formattedGenre() %></p>
               <a href="<%= movie.url %>" class="card-link">More Info</a>
+              <a href="mailto:?subject=<%= movie.title %> movie link sent from (Movie Curator)&body=Check out <%= movie.title %> <%= movie.url %>. %0D%0AHope you enjoy the movie. %0D%0A%0D%0ASent from (Movie Curator)." class="card-link">Email</a>
             </div>
           </div>
         </div>
