@@ -49,7 +49,13 @@ app.get('/movies', async (req, res) => {
 
 // GET route `/movies/new`
 app.get('/movies/new', (req, res) => {
-    res.render('movies/new')
+    const genreNames = [
+        'Animation', 'Comedy', 'Family', 'Fantasy', 'Action', 'Adventure', 'Drama',
+        'Romance', 'Thriller', 'Horror', 'Mystery', 'Sci-Fi', 'Civil-Rights', 'Crime',
+        'Western', 'Biography', 'History'
+    ]
+
+    res.render('movies/new', { genreNames})
 })
 
 // POST route `/movies`
