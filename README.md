@@ -12,8 +12,8 @@ Movie Curator is a Web Application that allows you to Create, Read, Update and D
 | New | `/movies/new` | GET | Form to create a new movie | ✅ |
 | Create | `/movies` | POST | creates a new movie on the server | ✅ |
 | Show | `/movies/:id` | GET | details for a specific movie |  |
-| Edit | `/movies/:id/edit` | GET | Form to edit specific movie |  |
-| Update | `/movies/:id` | PATCH | updates a specific movie on the server |  |
+| Edit | `/movies/:id/edit` | GET | Form to edit specific movie | ✅ |
+| Update | `/movies/:id` | PATCH | updates a specific movie on the server | ✅ |
 | Destroy | `/movies/:id` | DELETE | deletes a specific movie on the server |  |
 
 ### Technologies that will be used in creating the "Movie Curator" Web Applicatioon
@@ -778,7 +778,7 @@ app.get('/movies/new', (req, res) => {
 
 ***
 
-## 14. Add an Edit Form 
+## 14. Add an Edit Form and `PUT` Update route 
 
 1. Create a file called `edit.ejs` and save it to the `movies` folder. 
 2. Edit the `edit.ejs` file as follows: 
