@@ -897,6 +897,36 @@ app.put('/movies/:id', async (req, res) => {
 ```
 7. Run the server `node index.js` and you will now be able to update a selected movies.
 
+## 15. Filter Movies using Query Parameter 
+
+1. Modify the GET `/movies` route in `index.js`. 
+```javascript
+// GET route `/movies`
+app.get('/movies', async (req, res) => {
+    // filter movies if we detect a `genre` query parameter
+    // e.g /movies?genre=christmas 
+    let { genre } = req.query
+
+    // default query search will return all movies from the database
+    let query = {}
+
+    if(genre) {
+        genre = genre.charAt(0).toUpperCase() + genre.slice(1)
+
+        // update the query to filter by `genre`
+        query = { genre } 
+    }
+
+    const movies = await Movie.find(query)
+
+    res.render('movies/index', { movies })
+
+    // for backing up database data in JSON 
+    // res.json(movies)
+})
+```
+2. Navigate to `localhost:3000/movies?genre=christmas` and observe the movies will be filtered by the given genre.
+
 
 ## Resources 
 
