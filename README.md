@@ -778,7 +778,7 @@ app.get('/movies/new', (req, res) => {
 
 ***
 
-## 14. Add an Edit Form 
+## 14. Add an Edit Form and `PUT` Update route 
 
 1. Create a file called `edit.ejs` and save it to the `movies` folder. 
 2. Edit the `edit.ejs` file as follows: 
