@@ -48,9 +48,25 @@ app.get('/', (req, res) => {
 
 // GET route `/movies`
 app.get('/movies', async (req, res) => {
-    const movies = await Movie.find({})
+    // filter movies if we detect a `genre` query parameter
+    // e.g /movies?genre=christmas 
+    let { genre } = req.query
+
+    // default query search will return all movies from the database
+    let query = {}
+
+    if(genre) {
+        genre = genre.charAt(0).toUpperCase() + genre.slice(1)
+
+        // update the query to filter by `genre`
+        query = { genre } 
+    }
+
+    const movies = await Movie.find(query)
+
     res.render('movies/index', { movies })
 
+    // for backing up database data in JSON 
     // res.json(movies)
 })
 
@@ -118,3 +134,4 @@ app.put('/movies/:id', async (req, res) => {
 
     res.redirect('/movies')
 })
+
