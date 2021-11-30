@@ -7,6 +7,8 @@ const app = express()
 
 const PORT = '3000'
 
+// require `method-override` to be able to parse Form data to PUT, DELETE, PATCH
+// this is required since Forms can only parse POST and GET by default
 const methodOverride = require('method-override')
 
 // require the Mongoose package
