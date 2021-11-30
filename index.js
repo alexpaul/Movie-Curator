@@ -7,6 +7,8 @@ const app = express()
 
 const PORT = '3000'
 
+const methodOverride = require('method-override')
+
 // require the Mongoose package
 const mongoose = require('mongoose')
 
@@ -31,6 +33,9 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(__dirname + '/public'))
 
+// override with POST having ?_method=PUT
+app.use(methodOverride('_method'))
+
 // To extract the Form POST we have to use express.urlencoded() middleware
 app.use(express.urlencoded({ extended: true }))
 
@@ -49,13 +54,8 @@ app.get('/movies', async (req, res) => {
 
 // GET route `/movies/new`
 app.get('/movies/new', (req, res) => {
-    const genreNames = [
-        'Animation', 'Comedy', 'Family', 'Fantasy', 'Action', 'Adventure', 'Drama',
-        'Romance', 'Thriller', 'Horror', 'Mystery', 'Sci-Fi', 'Civil-Rights', 'Crime',
-        'Western', 'Biography', 'History'
-    ]
-
-    res.render('movies/new', { genreNames})
+    const genreNames = Movie.genreNames()
+    res.render('movies/new', { genreNames })
 })
 
 // POST route `/movies`
@@ -63,7 +63,7 @@ app.post('/movies', (req, res) => {
     // destructure the following properties from the Request Body
     const { title, year, genre, image, url } = req.body 
 
-    const product = new Movie({
+    const movie = new Movie({
         title: title,
         year: year,
         genre: genre,
@@ -72,7 +72,7 @@ app.post('/movies', (req, res) => {
     })
 
     // save the newly created `movie` instance to the database
-    product.save()
+    movie.save()
         .then(response => {
             console.log('Movie was created.')
             console.log(response)
@@ -84,4 +84,35 @@ app.post('/movies', (req, res) => {
         })
 })
 
-// db.movies.deleteOne({ title: 'White Reindeer'} )
+// GET /movies/:id/edit route to render a Form to edit a movie
+app.get('/movies/:id/edit', async (req, res) => {
+    const { id } = req.params 
+
+    const movie = await Movie.findById(id)
+
+    const genreNames = Movie.genreNames()
+
+    res.render('movies/edit', { movie, genreNames })
+})
+
+// PUT /movies/:id route to handle update logic
+app.put('/movies/:id', async (req, res) => {
+    console.log('in update route')
+
+    const { id } = req.params 
+
+    const { title, year, image, url, genre } = req.body
+
+    const movie = await Movie.findByIdAndUpdate(
+        id,
+        {
+            title: title,
+            year: year,
+            image: image,
+            url: url,
+           genre: genre 
+        }
+    )
+
+    res.redirect('/movies')
+})

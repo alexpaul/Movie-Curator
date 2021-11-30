@@ -36,6 +36,17 @@ movieSchema.methods.formattedGenre = function() {
     return str
 }
 
+// static method to return a list of genre names 
+movieSchema.statics.genreNames = function() {
+    const names = [
+        'Animation', 'Comedy', 'Family', 'Fantasy', 'Action', 'Adventure', 'Drama',
+        'Romance', 'Thriller', 'Horror', 'Mystery', 'Sci-Fi', 'Civil-Rights', 'Crime',
+        'Western', 'Biography', 'History', 'Christmas'
+    ]
+
+    return names
+}
+
 // define the Movie Model
 const Movie = new mongoose.model('Movie', movieSchema)
 

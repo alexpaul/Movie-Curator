@@ -1,0 +1,64 @@
+<%- include('../partials/header', { title: 'Edit Movie' }) %>
+
+    <div class="container">
+
+        <h1 class="mb-3">Edit Movie</h1>
+
+        <form action="/movies/<%= movie.id %>?_method=PUT" method="POST">
+            <div>
+                <label for="title" class="form-label">Edit Title:</label>
+                <input class="form-control" type="text" id="title" name="title" value="<%= movie.title %>">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="form-label" for="year">Edit Year:</label>
+                <input class="form-control" type="text" id="year" name="year" value="<%= movie.year %>">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="form-label" for="image">Edit Image URL:</label>
+                <input class="form-control" type="text" id="image" name="image" value="<%= movie.image %>">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="form-label" for="url">Edit the movie link e.g (Rotten Tomatoes, IMDB):</label>
+                <input class="form-control" type="text" id="url" name="url" value="<%= movie.url %>">
+            </div>
+
+            <br>
+
+            <div>
+                <fieldset id="genre" class="form-control">
+                    <legend>Please select the appropriate Genre</legend>
+
+                    <% for(const genre of genreNames) { %>
+                        <div class="form-check">
+                            <input class="form-check-input" 
+                                type="checkbox"
+                                value="<%= genre %>"
+                                name="genre" 
+                                id="<%= genre %>"
+                                <%= movie.genre.includes(genre) ? 'checked' : '' %>
+                            >
+                            <label class="form-check-label" for="<%= genre %>"><%= genre %></label>
+                        </div>
+                    <% } %>
+
+                </fieldset>
+            </div>
+
+            <br>
+
+            <div class="col text-center mb-5">
+                <button class="btn btn-danger">Update</button>
+            </div>
+        </form>
+    </div>
+
+<%- include('../partials/footer') %>
