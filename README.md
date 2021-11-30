@@ -907,6 +907,7 @@ app.put('/movies/:id', async (req, res) => {
 * [Mongoose](https://mongoosejs.com/)
 * [EJS](https://ejs.co/)
 * [MongoDB Compass - GUI for MongoDB](https://www.mongodb.com/products/compass)
+* [StackOverflow - When do I use path params vs. query params in a RESTful API?](https://stackoverflow.com/questions/30967822/when-do-i-use-path-params-vs-query-params-in-a-restful-api)
 
 ## Troubleshooting 
 
