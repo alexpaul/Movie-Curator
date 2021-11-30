@@ -754,6 +754,148 @@ movieSchema.methods.formattedGenre = function() {
 
 <img width="1785" alt="Screen Shot 2021-11-28 at 8 05 32 AM" src="https://user-images.githubusercontent.com/1819208/143769027-d2b81d02-3f17-411c-81e7-4cfbaeb4b644.png">
 
+***
+
+## 13. Refactor rendering the radio buttons for the Movie genre
+
+1. Cut out all the `div`s that are rendering radio button in `new.ejs` and replace it with the `for...of` loop below.
+```javascript 
+<% for(const genre of genreNames) { %>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="<%= genre %>" name="genre" id="<%= genre %>">
+        <label class="form-check-label" for="<%= genre %>"><%= genre %></label>
+    </div>
+<% } %>
+```
+2. Since we now need `genreNames` passed in update `index.js` GET `/movies/new` route
+```javascript
+// GET route `/movies/new`
+app.get('/movies/new', (req, res) => {
+    const genreNames = Movie.genreNames()
+    res.render('movies/new', { genreNames })
+})
+```
+
+***
+
+## 14. Add an Edit Form 
+
+1. Create a file called `edit.ejs` and save it to the `movies` folder. 
+2. Edit the `edit.ejs` file as follows: 
+```javascript
+<%- include('../partials/header', { title: 'Edit Movie' }) %>
+
+    <div class="container">
+
+        <h1 class="mb-3">Edit Movie</h1>
+
+        <form action="/movies/<%= movie.id %>?_method=PUT" method="POST">
+            <div>
+                <label for="title" class="form-label">Edit Title:</label>
+                <input class="form-control" type="text" id="title" name="title" value="<%= movie.title %>">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="form-label" for="year">Edit Year:</label>
+                <input class="form-control" type="text" id="year" name="year" value="<%= movie.year %>">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="form-label" for="image">Edit Image URL:</label>
+                <input class="form-control" type="text" id="image" name="image" value="<%= movie.image %>">
+            </div>
+
+            <br>
+
+            <div>
+                <label class="form-label" for="url">Edit the movie link e.g (Rotten Tomatoes, IMDB):</label>
+                <input class="form-control" type="text" id="url" name="url" value="<%= movie.url %>">
+            </div>
+
+            <br>
+
+            <div>
+                <fieldset id="genre" class="form-control">
+                    <legend>Please select the appropriate Genre</legend>
+
+                    <% for(const genre of genreNames) { %>
+                        <div class="form-check">
+                            <input class="form-check-input" 
+                                type="checkbox"
+                                value="<%= genre %>"
+                                name="genre" 
+                                id="<%= genre %>"
+                                <%= movie.genre.includes(genre) ? 'checked' : '' %>
+                            >
+                            <label class="form-check-label" for="<%= genre %>"><%= genre %></label>
+                        </div>
+                    <% } %>
+
+                </fieldset>
+            </div>
+
+            <br>
+
+            <div class="col text-center mb-5">
+                <button class="btn btn-danger">Update</button>
+            </div>
+        </form>
+    </div>
+
+<%- include('../partials/footer') %>
+```
+3. Since we will be using a Form and by default Forms are only able to POST and GET, we need to install `method-override` package. `npm i method-override`. 
+4. Add the following to `index.js`: 
+```javascript
+// require `method-override` to be able to parse Form data to PUT, DELETE, PATCH
+// this is required since Forms can only parse POST and GET by default
+const methodOverride = require('method-override')
+
+// override with POST having ?_method=PUT
+app.use(methodOverride('_method'))
+```
+5. Create a route to handle rendering the Edit Form 
+```javascript
+// GET /movies/:id/edit route to render a Form to edit a movie
+app.get('/movies/:id/edit', async (req, res) => {
+    const { id } = req.params 
+
+    const movie = await Movie.findById(id)
+
+    const genreNames = Movie.genreNames()
+
+    res.render('movies/edit', { movie, genreNames })
+})
+```
+6. Create a route to handle the logic for updating a movie instance in the database 
+```javascript 
+// PUT /movies/:id route to handle update logic
+app.put('/movies/:id', async (req, res) => {
+    console.log('in update route')
+
+    const { id } = req.params 
+
+    const { title, year, image, url, genre } = req.body
+
+    const movie = await Movie.findByIdAndUpdate(
+        id,
+        {
+            title: title,
+            year: year,
+            image: image,
+            url: url,
+           genre: genre 
+        }
+    )
+
+    res.redirect('/movies')
+})
+```
+7. Run the server `node index.js` and you will now be able to update a selected movies.
 
 
 ## Resources 
