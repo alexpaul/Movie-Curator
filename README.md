@@ -956,7 +956,7 @@ app.get('/movies', async (req, res) => {
 ```
 5. Navigate to `localhost:3000/movies` and click on a genre link and observe the movies will be filtered by that genre.
 
-<img width="623" alt="Screen Shot 2021-11-30 at 5 08 51 AM" src="https://user-images.githubusercontent.com/1819208/144222445-c3be0349-9f9d-46a3-af7d-a7e4375bc3fa.png">
+<img width="1784" alt="Screen Shot 2021-12-01 at 5 57 56 AM" src="https://user-images.githubusercontent.com/1819208/144222529-51192b8f-4eec-45a9-a871-ebc5cc480bbb.png">
 
 
 ## Resources 
