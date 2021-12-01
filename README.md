@@ -925,7 +925,38 @@ app.get('/movies', async (req, res) => {
     // res.json(movies)
 })
 ```
-2. Navigate to `localhost:3000/movies?genre=christmas` and observe the movies will be filtered by the given genre.
+3. Modify the `movie-card` by adding anchor tags to each genre with a query parameter link `/movies?genre=genre`.
+```javascript 
+<div class="container">
+    <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<%= movie.image %>" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title mb-5"><%= movie.title %></h5>
+              <p class="card-text"><%= movie.year %></p>
+
+              <% let str = '' %>
+              <% for(const genre of movie.genre) { %>
+                    <span class="card-link"><a href="/movies?genre=<%= genre %>"><%=  genre %></a></span>
+              <% } %>
+
+              <p class="card-text"><%= str %></p>
+
+              <a href="<%= movie.url %>" class="card-link">More Info</a>
+              <a href="mailto:?subject=<%= movie.title %> movie link sent from (Movie Curator)&body=Check out <%= movie.title %> <%= movie.url %>. %0D%0AHope you enjoy the movie. %0D%0A%0D%0ASent from (Movie Curator)." class="card-link">Email</a>
+              <a href="/movies/<%= movie.id %>/edit" class="card-link">Edit</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+```
+5. Navigate to `localhost:3000/movies` and click on a genre link and observe the movies will be filtered by that genre.
+
+<img width="623" alt="Screen Shot 2021-11-30 at 5 08 51 AM" src="https://user-images.githubusercontent.com/1819208/144222445-c3be0349-9f9d-46a3-af7d-a7e4375bc3fa.png">
 
 
 ## Resources 
