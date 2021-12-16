@@ -958,6 +958,22 @@ app.get('/movies', async (req, res) => {
 
 <img width="1784" alt="Screen Shot 2021-12-01 at 5 57 56 AM" src="https://user-images.githubusercontent.com/1819208/144222529-51192b8f-4eec-45a9-a871-ebc5cc480bbb.png">
 
+***
+
+## 16. Migrating local MongoDB database to MongoDB Atlas cloud 
+
+> MongoDB: MongoDB Atlas is a multi-cloud database service by the same people that build MongoDB. Atlas simplifies deploying and managing your databases while offering the versatility you need to build resilient and performant global applications on the cloud providers of your choice.
+
+1. Create a [free MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register?utm_content=rlsapostreg&utm_source=google&utm_campaign=gs_americas_uscan_search_brand_dsa_atlas_desktop_rlsa_postreg&utm_term=&utm_medium=cpc_paid_search&utm_ad=&utm_ad_campaign_id=14383025495&adgroup=129270225274&gclid=Cj0KCQiAweaNBhDEARIsAJ5hwbc0sD6bGu9WwNmnTZVH5VnpMn1FTyVyTGkB7lEDzseMHP4yzb6sVSMaAisQEALw_wcB) account. 
+2. Once created you need the connection url which looks similar to `mongodb+srv://yourAccountName:<password>@cluster0.npqlc.mongodb.net/database_name?retryWrites=true&w=majority`
+3. This will be the database url used in your `mongoose` connection. 
+```javascript
+mongoose.connect(dbUrl,....)
+```
+4. If you need to import your local MongoDB collection, the MongoDB Compass app is a great choice. 
+5. First you will need the Compass connection url from your MongoDB Atlas account. 
+6. Once you've successfully connected to your Atlas database via Compass you can now import JSON to update your collection(s) with data. 
+
 
 ## Resources 
 
