@@ -41,7 +41,8 @@ movieSchema.statics.genreNames = function() {
     const names = [
         'Animation', 'Comedy', 'Family', 'Fantasy', 'Action', 'Adventure', 'Drama',
         'Romance', 'Thriller', 'Horror', 'Mystery', 'Sci-Fi', 'Civil-Rights', 'Crime',
-        'Western', 'Biography', 'History', 'Christmas', 'Musical', 'Short', 'Reality-TV', 'GMAX-XMAS'
+        'Western', 'Biography', 'History', 'Christmas', 'Musical', 'Short', 'Reality-TV', 'GMAX-XMAS',
+        'Documentary', 'Music'
     ]
 
     return names
