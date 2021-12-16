@@ -964,7 +964,7 @@ app.get('/movies', async (req, res) => {
 
 > MongoDB: MongoDB Atlas is a multi-cloud database service by the same people that build MongoDB. Atlas simplifies deploying and managing your databases while offering the versatility you need to build resilient and performant global applications on the cloud providers of your choice.
 
-1. Create a [free MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register?utm_content=rlsapostreg&utm_source=google&utm_campaign=gs_americas_uscan_search_brand_dsa_atlas_desktop_rlsa_postreg&utm_term=&utm_medium=cpc_paid_search&utm_ad=&utm_ad_campaign_id=14383025495&adgroup=129270225274&gclid=Cj0KCQiAweaNBhDEARIsAJ5hwbc0sD6bGu9WwNmnTZVH5VnpMn1FTyVyTGkB7lEDzseMHP4yzb6sVSMaAisQEALw_wcB) account. 
+1. Create a [free MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/) account. 
 2. Once created you need the connection url which looks similar to `mongodb+srv://yourAccountName:<password>@cluster0.npqlc.mongodb.net/database_name?retryWrites=true&w=majority`
 3. This will be the database url used in your `mongoose` connection. 
 ```javascript
