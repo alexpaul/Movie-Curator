@@ -14,7 +14,7 @@ const methodOverride = require('method-override')
 // require the Mongoose package
 const mongoose = require('mongoose')
 
-const dbUrl = 'mongodb://localhost:27017/movieDB'
+const dbUrl = require('./config')
 
 // connect to the `movieDB` database, if it does yet exist it will be created
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
