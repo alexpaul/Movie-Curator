@@ -884,4 +884,64 @@
   "image": "https://resizing.flixster.com/O88-VxjcEqLBMgAPdXJp3QDg0cA=/206x305/v2/https://resizing.flixster.com/MPvcmnduFXhMwqhno6eQQrv5gXE=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzg4Yjk0NDAxLWFhODgtNDE4ZC04MDJlLTZlZmIzYTFjMjdiYy5qcGc=",
   "url": "https://www.imdb.com/title/tt11286314/?ref_=nv_sr_srsg_0",
   "__v": 0
+},{
+  "_id": {
+    "$oid": "61b7132f961706a3d1fc26b8"
+  },
+  "title": "LEGO Star Wars Holiday Special",
+  "year": 2020,
+  "genre": [
+    "Animation",
+    "Action",
+    "Christmas",
+    "Short"
+  ],
+  "image": "https://resizing.flixster.com/Eu4oA4E7T_2nNYLlY272ubkArkQ=/206x305/v2/https://resizing.flixster.com/LW1kd2abO_Yp6zjf2pMSjxXglK0=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzk3YzY3ODdhLWFhOTMtNGQ4OS05ZTU3LTAyYjhhMjg3MzliMy5qcGc=",
+  "url": "https://www.imdb.com/title/tt12885438/?ref_=nv_sr_srsg_0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b71386961706a3d1fc26bb"
+  },
+  "title": "While You Were Sleeping",
+  "year": 1995,
+  "genre": [
+    "Comedy",
+    "Drama",
+    "Romance",
+    "Christmas"
+  ],
+  "image": "https://resizing.flixster.com/HIC6lqpuxylS7iUhfLpoVRbcR3Y=/206x305/v2/https://flxt.tmsimg.com/assets/p16680_p_v8_ad.jpg",
+  "url": "https://www.imdb.com/title/tt0114924/?ref_=nv_sr_srsg_0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b713f4961706a3d1fc26be"
+  },
+  "title": "Rudolph The Red-Nosed Reindeer",
+  "year": 1954,
+  "genre": [
+    "Animation",
+    "Comedy",
+    "Adventure",
+    "Christmas"
+  ],
+  "image": "https://resizing.flixster.com/We4WWMRK-26nV29NPY4msKw_py4=/206x305/v2/https://resizing.flixster.com/apNl_LKPANyWzuWY3wNDo0Tf7wo=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzL2U2YWJhOTAyLTVmNTUtNDc1ZS1hOGViLTFjMThjZDgyY2U1ZC5qcGc=",
+  "url": "https://www.imdb.com/title/tt0058536/?ref_=nv_sr_srsg_0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b71429961706a3d1fc26c1"
+  },
+  "title": "Holiday Inn",
+  "year": 1942,
+  "genre": [
+    "Comedy",
+    "Drama",
+    "Christmas",
+    "Musical"
+  ],
+  "image": "https://resizing.flixster.com/08cG7AOCs9TxNs1oCTGykIITjFQ=/206x305/v2/https://flxt.tmsimg.com/assets/p2420_p_v10_ab.jpg",
+  "url": "https://www.imdb.com/title/tt0034862/?ref_=nv_sr_srsg_0",
+  "__v": 0
 }]
